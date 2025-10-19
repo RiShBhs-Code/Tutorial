@@ -1,9 +1,10 @@
-&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot; &gt;
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-&lt;suite name=&quot;JenkinsIntegrationSuite&quot;&gt;
-&lt;test name=&quot;SampleAPITests&quot;&gt;
-&lt;classes&gt;
-&lt;class name=&quot;com.apitests.SampleAPITest&quot; /&gt;
-&lt;/classes&gt;
-&lt;/test&gt;
-&lt;/suite&gt;
+<suite name="API Test Suite" parallel="false">
+    <test name="Sample API Test">
+        <classes>
+            <class name="com.example.tests.SampleAPITest"/>
+        </classes>
+    </test>
+</suite>

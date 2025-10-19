@@ -1,42 +1,57 @@
-&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
-xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0
-http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
-&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-&lt;groupId&gt;com.api.automation&lt;/groupId&gt;
-&lt;artifactId&gt;testng-jenkins-example&lt;/artifactId&gt;
-&lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
-&lt;properties&gt;
-&lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;
-&lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;
-&lt;/properties&gt;
-&lt;dependencies&gt;
-&lt;dependency&gt;
-&lt;groupId&gt;org.testng&lt;/groupId&gt;
-&lt;artifactId&gt;testng&lt;/artifactId&gt;
-&lt;version&gt;7.8.0&lt;/version&gt;
-&lt;scope&gt;test&lt;/scope&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-&lt;groupId&gt;io.rest-assured&lt;/groupId&gt;
-&lt;artifactId&gt;rest-assured&lt;/artifactId&gt;
-&lt;version&gt;5.3.0&lt;/version&gt;
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-&lt;scope&gt;test&lt;/scope&gt;
-&lt;/dependency&gt;
-&lt;/dependencies&gt;
-&lt;build&gt;
-&lt;plugins&gt;
-&lt;plugin&gt;
-&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-&lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
-&lt;version&gt;3.2.3&lt;/version&gt;
-&lt;configuration&gt;
-&lt;suiteXmlFiles&gt;
-&lt;suiteXmlFile&gt;testng.xml&lt;/suiteXmlFile&gt;
-&lt;/suiteXmlFiles&gt;
-&lt;/configuration&gt;
-&lt;/plugin&gt;
-&lt;/plugins&gt;
-&lt;/build&gt;
-&lt;/project&gt;
+    <groupId>com.example</groupId>
+    <artifactId>TestNGProject</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>TestNG Project</name>
+    <description>Simple TestNG + RestAssured API Test</description>
+
+    <dependencies>
+        <!-- ✅ TestNG for testing -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.10.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- ✅ Rest Assured for API testing -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.5.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- ✅ JSON Assertion (Optional but useful) -->
+        <dependency>
+            <groupId>org.skyscreamer</groupId>
+            <artifactId>jsonassert</artifactId>
+            <version>1.5.3</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- ✅ Plugin to run TestNG tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
