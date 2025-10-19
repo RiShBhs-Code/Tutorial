@@ -1,0 +1,9 @@
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot; &gt;
+
+&lt;suite name=&quot;JenkinsIntegrationSuite&quot;&gt;
+&lt;test name=&quot;SampleAPITests&quot;&gt;
+&lt;classes&gt;
+&lt;class name=&quot;com.apitests.SampleAPITest&quot; /&gt;
+&lt;/classes&gt;
+&lt;/test&gt;
+&lt;/suite&gt;
