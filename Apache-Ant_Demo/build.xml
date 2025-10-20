@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<project name="AntJenkinsDemo" default="compile" basedir=".">
+
+    <!-- Set global properties -->
+    <property name="src.dir"     value="src"/>
+    <property name="build.dir"   value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="jar.dir"     value="${build.dir}/jar"/>
+    <property name="jar.name"    value="HelloWorld.jar"/>
+
+    <!-- Clean -->
+    <target name="clean">
+        <echo message="Cleaning project..."/>
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <!-- Compile -->
+    <target name="compile" depends="clean">
+        <echo message="Compiling source files..."/>
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" includeantruntime="false"/>
+    </target>
+
+    <!-- Create JAR -->
+    <target name="jar" depends="compile">
+        <echo message="Creating JAR file..."/>
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.dir}/${jar.name}" basedir="${classes.dir}"/>
+    </target>
+
+    <!-- Run -->
+    <target name="run" depends="jar">
+        <echo message="Running HelloWorld class..."/>
+        <java jar="${jar.dir}/${jar.name}" fork="true"/>
+    </target>
+
+</project>
